@@ -1,6 +1,5 @@
 package org.ea.blogme.userservice.exceptionhandler.advice;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.ea.blogme.userservice.exceptionhandler.dto.ApiError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

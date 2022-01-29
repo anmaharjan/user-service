@@ -1,1 +1,11 @@
-INSERT INTO roles (role) VALUES('ADMIN'), ('BLOGGER'), ('READER');
+INSERT INTO roles (role)
+SELECT 'ADMIN'
+WHERE NOT EXISTS(SELECT * FROM roles where role='ADMIN');
+
+INSERT INTO roles (role)
+SELECT 'BLOGGER'
+    WHERE NOT EXISTS(SELECT * FROM roles where role='BLOGGER');
+
+INSERT INTO roles (role)
+SELECT 'READER'
+    WHERE NOT EXISTS(SELECT * FROM roles where role='READER');
