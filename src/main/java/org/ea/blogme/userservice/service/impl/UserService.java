@@ -81,7 +81,8 @@ public class UserService implements IUserService {
 
     @Override
     public ResponseMessage delete(Long id) {
-        userRepository.deleteById(id);
+        if(userRepository.existsById(id))
+            userRepository.deleteById(id);
         return new ResponseMessage("Deleted.", HttpStatus.OK);
     }
 }
